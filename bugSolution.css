@@ -1,0 +1,25 @@
+/* bug.css */
+.container {
+  display: flex;
+}
+
+.item {
+  /* Incorrect usage of calc() */
+  background-color: lightblue;
+  margin: 10px;
+  /* Missing width, will likely not be 10px less than 100% */
+  height: calc(100% - 20px);
+}
+
+/* bugSolution.css */
+.container {
+  display: flex;
+}
+
+.item {
+  /* Correct usage of calc() */
+  background-color: lightgreen;
+  margin: 10px;
+  width: 100%; /* Define width before using calc() */
+  height: calc(100% - 20px);
+}
